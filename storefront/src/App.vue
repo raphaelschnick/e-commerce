@@ -1,15 +1,30 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div id="default">
+    <header-navigation />
+    <bottom-navigation />
+    <router-view />
+    <footer-navigation />
   </div>
 </template>
+<script>
+import BottomNavigation from '@/components/nagivation/Bottom'
+import FooterNavigation from '@/components/nagivation/Footer'
+import HeaderNavigation from '@/components/nagivation/Header'
+export default {
+  components: {
+    HeaderNavigation,
+    FooterNavigation,
+    BottomNavigation
+  }
+}
+</script>
 
-<style>
-#app {
-  font-family: SansSerif, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style lang="scss">
+@import "~@storefront-ui/vue/styles";
+#default {
+}
+html {
+  --font-family--primary: 'Lato', sans-serif;
+  --font-family--secondary: 'Lato', sans-serif;
 }
 </style>
